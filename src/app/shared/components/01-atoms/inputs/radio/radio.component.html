@@ -1,0 +1,12 @@
+<div class="">
+  <label for="">{{radioGroup.label}}</label>
+  <div class="">
+    <div 
+    *ngFor="let radioItem of radioGroup.radioItems"
+    [class]="bem.bemConvertion(baseClass,'','',['flex','items-center','space-x-2'])">
+      <input [id]="radioItem.id" [name]="radioGroup.name" type="radio" [class]="bem.bemConvertion(baseClass,'radio-input')"
+        (input)="onChange($any($event.target).id)">
+      <label [for]="radioItem.id" [class]="bem.bemConvertion(baseClass,'label')">{{radioItem.label}}</label>
+    </div>
+  </div>
+</div>

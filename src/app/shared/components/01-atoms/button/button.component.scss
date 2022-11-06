@@ -1,0 +1,14 @@
+$baseClass: '.button';
+
+button{
+    @apply flex justify-center items-center text-base sm:text-sm font-semibold py-3 px-6 w-full rounded-md transition;
+}
+#{$baseClass}{
+    
+    
+    // Type
+    // ----------------------------------
+    &__main{
+        @apply bg-red-500  hover:bg-red-600 text-white
+    }
+}

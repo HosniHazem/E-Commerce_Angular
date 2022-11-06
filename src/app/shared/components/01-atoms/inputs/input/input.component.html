@@ -1,0 +1,14 @@
+<div [class]="bem.bemConvertion(baseClass)">
+  <label [for]="inputGroup.id" [class]="bem.bemConvertion(baseClass,'label')">{{inputGroup.label}}</label>
+  <div class="relative mt-1 rounded-md shadow-sm">
+    <div *ngIf="this.inputGroup.icon" [class]="bem.bemConvertion(baseClass,'icon')">
+      <c-icon [icon]="this.inputGroup.icon"></c-icon>
+    </div>
+    <input [type]="inputGroup.type" [name]="inputGroup.name" [id]="inputGroup.id" [placeholder]="inputGroup.placeholder"
+      [class]="bem.bemConvertion(
+        baseClass,
+        'input',
+        (this.inputGroup.icon) ? 'with-icon' : '')" [placeholder]="inputGroup.placeholder"
+      (input)="onChange($any($event.target).value)" #input>
+  </div>
+</div>

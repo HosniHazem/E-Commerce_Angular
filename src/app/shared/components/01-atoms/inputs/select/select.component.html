@@ -1,0 +1,8 @@
+<div [class]="bem.bemConvertion(baseClass)">
+  <label [for]="selectInputGroup.id" [class]="bem.bemConvertion(baseClass,'label')">{{selectInputGroup.label}}</label>
+  <select [id]="selectInputGroup.id" [name]="selectInputGroup.name"
+    [class]="bem.bemConvertion(baseClass,'input')">
+    <option value="0" hidden selected>{{selectInputGroup.label}}</option>
+    <option *ngFor="let option of selectInputGroup.options" [value]="option.id">{{option.value}}</option>
+  </select>
+</div>

@@ -1,0 +1,10 @@
+<div [class]="bem.bemConvertion(baseClass,'','vertical')">
+  <div class="flex h-5 items-center">
+    <input [id]="inputGroup.id" [name]="inputGroup.name" type="checkbox"
+      [class]="bem.bemConvertion(baseClass,'checkbox')"
+      (input)="onChange($any($event.target).checked)">
+  </div>
+  <div class="ml-3 text-sm">
+    <label [for]="inputGroup.id" [class]="bem.bemConvertion(baseClass,'label')">{{inputGroup.label}}</label>
+  </div>
+</div>
