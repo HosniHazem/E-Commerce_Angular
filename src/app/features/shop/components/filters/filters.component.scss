@@ -1,0 +1,7 @@
+.mobile-menu-show{
+    @apply transition ease-in-out duration-300 transform translate-x-full;
+}
+
+.mobile-menu-hide{
+    @apply transition ease-in-out duration-300 transform translate-x-0;
+}

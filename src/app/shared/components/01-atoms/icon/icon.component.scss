@@ -7,3 +7,15 @@ i-feather{
 span{
     @apply flex items-center
 }
+
+.gray{
+  @apply text-gray-400
+}
+
+.white{
+  @apply text-white;
+}
+
+.black{
+  @apply text-gray-800;
+}

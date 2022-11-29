@@ -8,7 +8,8 @@ import { Bem } from 'src/app/shared/functions/bem';
 })
 export class ButtonComponent implements OnInit {
   @Input('type') type!: String;
-  @Input('content') content!: String;
+  @Input('content') content?: String | null;
+  @Input('iconType') iconType: String="gray";
   @Input('icon') icon?: string | null;
   @Output('submit') submit = new EventEmitter<any>();
 

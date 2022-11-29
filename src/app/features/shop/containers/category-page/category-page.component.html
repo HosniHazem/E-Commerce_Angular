@@ -1,0 +1,10 @@
+<div [class]="bem.bemConvertion(baseClass)">
+  <div [class]="bem.bemConvertion(baseClass,'filters')">
+    <app-filters></app-filters>
+  </div>
+  <div [class]="bem.bemConvertion(baseClass,'products')">
+    <shop-products-layout>
+      <app-card *ngFor="let i of ['','','','','','','','','','','','','','','']"></app-card>
+    </shop-products-layout>
+  </div>
+</div>

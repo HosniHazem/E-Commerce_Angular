@@ -1,4 +1,5 @@
 <button [class]="bem.bemConvertion(baseClass,type)" (click)="submitFunc()">
-  <c-icon *ngIf="icon" [icon]="icon" [class]="bem.bemConvertion(baseClass,'icon')"></c-icon>
-  <span [class]="bem.bemConvertion(baseClass,'content')">{{content}}</span>
+  <c-icon *ngIf="icon" [icon]="icon" [class]="bem.bemConvertion(baseClass,'icon')" [type]="iconType"></c-icon>
+  <span *ngIf="content" [class]="bem.bemConvertion(baseClass,'content')">{{content}}</span>
 </button>
+

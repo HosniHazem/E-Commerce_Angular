@@ -1,14 +1,23 @@
 $baseClass: '.button';
 
 button{
-    @apply flex justify-center items-center text-base sm:text-sm font-semibold py-3 px-6 w-full rounded-md transition;
+    @apply flex w-full h-full justify-center items-center text-base sm:text-sm font-semibold space-x-4 py-3 px-6 w-full rounded-md hover:bg-gray-50/30 transition border-none;
 }
 #{$baseClass}{
-    
-    
+
+    // Icon
+  svg{
+    @apply text-white;
+  }
     // Type
     // ----------------------------------
     &__main{
-        @apply bg-red-500  hover:bg-red-600 text-white
+        @apply bg-main-500 hover:bg-main-600 text-white
     }
+  &__basic{
+    @apply bg-gray-100 hover:bg-gray-300;
+  }
+
 }
+
+

@@ -9,6 +9,14 @@ import { RadioComponent } from './components/01-atoms/inputs/radio/radio.compone
 import { SelectComponent } from './components/01-atoms/inputs/select/select.component';
 import { PasswordInputComponent } from './components/01-atoms/inputs/password-input/password-input.component';
 import { IconsModule } from './components/00-base/icons/icons.module';
+import { LinkComponent } from './components/01-atoms/link/link.component';
+import {RouterLinkWithHref} from "@angular/router";
+import { HeaderComponent } from './components/06-layout/header/header.component';
+import { BreadcrumbComponent } from './components/02-molecules/breadcrumb/breadcrumb.component';
+import { FooterComponent } from './components/06-layout/footer/footer.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { GridComponent } from './components/07-templates/grid/grid.component';
+import { RatingsComponent } from './components/02-molecules/ratings/ratings.component';
 
 
 
@@ -22,12 +30,20 @@ import { IconsModule } from './components/00-base/icons/icons.module';
     RadioComponent,
     SelectComponent,
     PasswordInputComponent,
+    LinkComponent,
+    HeaderComponent,
+    BreadcrumbComponent,
+    FooterComponent,
+    GridComponent,
+    RatingsComponent,
   ],
   imports: [
     CommonModule,
-    IconsModule
+    IconsModule,
+    RouterLinkWithHref,
+    BrowserAnimationsModule,
   ],
-  exports:[
+  exports: [
     ButtonComponent,
     IconComponent,
     ImageComponent,
@@ -36,6 +52,11 @@ import { IconsModule } from './components/00-base/icons/icons.module';
     RadioComponent,
     PasswordInputComponent,
     SelectComponent,
+    LinkComponent,
+    HeaderComponent,
+    FooterComponent,
+    GridComponent,
+    RatingsComponent
   ]
 })
 export class SharedModule { }

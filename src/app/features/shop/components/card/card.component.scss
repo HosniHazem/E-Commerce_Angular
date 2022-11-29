@@ -1,0 +1,86 @@
+
+
+// Base Class
+$card-baseClass: '.card';
+
+#{$card-baseClass}{
+  @apply relative w-full flex flex-col;
+
+  // Main Image
+  &__main-image{
+    @apply relative h-72 w-full overflow-hidden rounded-lg;
+  }
+
+  // Content
+  &__content{
+    @apply relative mt-4;
+  }
+
+  // Id
+  &__id{
+    @apply mb-2 text-xs;
+  }
+
+  // Title
+  &__title{
+    @apply text-sm font-medium text-gray-900;
+  }
+
+  // Description
+  &__description{
+    @apply mt-1 text-sm text-gray-500;
+  }
+
+  // Brand
+  &__brand{
+    @apply font-bold text-gray-200 mt-2
+  }
+
+  // Financial Informations
+  &__fin-infos{
+    @apply absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4;
+  }
+
+  // Card Overlay
+  &__overlay{
+    @apply absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-90;
+  }
+
+  // Price
+  &__price{
+    @apply relative text-lg font-semibold text-white;
+  }
+
+  // stock
+  &__stock{
+    @apply absolute z-[100] top-4 left-4 px-4 py-2 rounded-md text-white;
+
+    // Out Of Stock
+    &--out-stock{
+      @apply bg-red-600;
+    }
+
+    // In Stock
+    &--in-stock{
+      @apply bg-green-600;
+    }
+
+  }
+
+  // Actions
+  &__actions{
+    @apply mt-6 flex items-center space-x-2 text-xs font-bold;
+    span{
+      @apply font-bold;
+    }
+  }
+
+  // Add
+  &__add{
+    @apply flex-1;
+  }
+  // Favorite
+  &__favorite{
+    @apply max-w-[48px];
+  }
+}

@@ -1,0 +1,15 @@
+
+.category-page{
+    @apply flex w-full flex-col p-6 lg:p-24 space-y-8;
+    
+
+    // Filters
+    &__filters{
+        @apply flex-1 py-2 border-b-[1px] w-full flex justify-end items-center;
+    }
+
+    // Products
+    &__products{
+        @apply flex-1
+    }
+}

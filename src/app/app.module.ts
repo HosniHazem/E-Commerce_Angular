@@ -7,11 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IconsModule } from './shared/components/00-base/icons/icons.module';
 import { SharedModule } from './shared/shared.module';
+import {AuthModule} from "./features/auth/auth.module";
+import {ShopModule} from "./features/shop/shop.module";
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AuthModule,
+    ShopModule,
     SharedModule,
     ReactiveFormsModule,
   ],
