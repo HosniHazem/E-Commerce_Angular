@@ -6,12 +6,21 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { CardComponent } from './components/card/card.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductsLayoutComponent } from './components/products-layout/products-layout.component';
+import { ProductPageComponent } from './containers/product-page/product-page.component';
+import { ShopPageComponent } from './containers/shop-page/shop-page.component';
+import { ProductContentComponent } from './components/product-content/product-content.component';
+import { RelatedProductsComponent } from './components/related-products/related-products.component';
+import { CreateShopPageComponent } from './containers/create-shop-page/create-shop-page.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 const routes : Routes=[
   {
     path: 'shop',
     children: [
-      {path: 'category',component:CategoryPageComponent},
+      {path: 'category/:id',component:CategoryPageComponent},
+      {path: 'product/:id',component:ProductPageComponent},
+      {path: 'shop/:id', component:ShopPageComponent},
+      {path: 'create-shop', component: CreateShopPageComponent},
     ],
   }
 ];
@@ -22,11 +31,17 @@ const routes : Routes=[
     FiltersComponent,
     CardComponent,
     ProductsLayoutComponent,
+    ProductPageComponent,
+    ShopPageComponent,
+    ProductContentComponent,
+    RelatedProductsComponent,
+    CreateShopPageComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
+    ReactiveFormsModule,
   ]
 })
 export class ShopModule { }
