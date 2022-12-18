@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {InputGroup} from "../../../../shared/components/00-base/models/input.model";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {AuthService} from "../../service/auth.service";
+import {LoginModel} from "../../models/login.model";
 
 @Component({
   selector: 'app-login',
@@ -9,9 +11,13 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class LoginComponent implements OnInit {
 
+
   // Form Inputs
   emailInputGroup= new InputGroup('at-sign','email','Email','loginEmail','loginEmail',"email-adress@gmail.com");
   passwordInputGroup= new InputGroup('lock','password','Password','loginPassword','loginPassword',"**********");
+
+  // Error
+  error: boolean=false;
 
   // Form Group
   loginForm= new FormGroup({
@@ -19,12 +25,23 @@ export class LoginComponent implements OnInit {
     password: new FormControl('',[Validators.required]),
   })
 
-  constructor() { }
+  constructor(private _authService:AuthService) { }
 
   ngOnInit(): void {
   }
 
   login() {
-
+    const loginModel: LoginModel = {
+      email: this.loginForm.get('email')?.value!,
+      password: this.loginForm.get('password')?.value!,
+    }
+    this._authService.login(loginModel).subscribe(
+      (res:any) => {
+        localStorage.setItem('jwtToken',res.token);
+      },
+      err => {
+          this.error=true;
+      }
+    );
   }
 }
