@@ -1,0 +1,6 @@
+<div [class]="bem.bemConvertion(baseClass,'',style)">
+  <p [class]="bem.bemConvertion(baseClass,'text')">{{message}}</p>
+  <span *ngIf="canClose" [class]="bem.bemConvertion(baseClass,'icon',style)">
+      <c-icon [icon]="'x'" ></c-icon>
+  </span>
+</div>
