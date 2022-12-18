@@ -9,11 +9,13 @@ import { IconsModule } from './shared/components/00-base/icons/icons.module';
 import { SharedModule } from './shared/shared.module';
 import {AuthModule} from "./features/auth/auth.module";
 import {ShopModule} from "./features/shop/shop.module";
+import {HttpClientModule} from "@angular/common/http";
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     AuthModule,
     ShopModule,
     SharedModule,

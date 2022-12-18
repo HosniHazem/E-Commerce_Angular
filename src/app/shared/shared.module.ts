@@ -17,6 +17,9 @@ import { FooterComponent } from './components/06-layout/footer/footer.component'
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { GridComponent } from './components/07-templates/grid/grid.component';
 import { RatingsComponent } from './components/02-molecules/ratings/ratings.component';
+import { ErrorComponent } from './components/02-molecules/error/error.component';
+import { DeviderComponent } from './components/01-atoms/devider/devider.component';
+import { StockIndicatorComponent } from './components/01-atoms/stock-indicator/stock-indicator.component';
 
 
 
@@ -36,6 +39,9 @@ import { RatingsComponent } from './components/02-molecules/ratings/ratings.comp
     FooterComponent,
     GridComponent,
     RatingsComponent,
+    ErrorComponent,
+    DeviderComponent,
+    StockIndicatorComponent,
   ],
   imports: [
     CommonModule,
@@ -56,7 +62,10 @@ import { RatingsComponent } from './components/02-molecules/ratings/ratings.comp
     HeaderComponent,
     FooterComponent,
     GridComponent,
-    RatingsComponent
+    RatingsComponent,
+    ErrorComponent,
+    DeviderComponent,
+    StockIndicatorComponent
   ]
 })
 export class SharedModule { }
