@@ -11,6 +11,7 @@ export class ButtonComponent implements OnInit {
   @Input('content') content?: String | null;
   @Input('iconType') iconType: String="gray";
   @Input('icon') icon?: string | null;
+  @Input('disabled') disabled: boolean= false;
   @Output('submit') submit = new EventEmitter<any>();
 
   baseClass: String = 'button';
