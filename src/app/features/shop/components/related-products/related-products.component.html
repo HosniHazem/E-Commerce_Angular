@@ -1,0 +1,8 @@
+<section [class]="bem.bemConvertion(baseClass)">
+  <h2 id="related-heading" [class]="bem.bemConvertion(baseClass,'title')">Customers also bought</h2>
+
+  <div [class]="bem.bemConvertion(baseClass,'cards')">
+  <shop-card [mini]="true" *ngFor="let _ of ['','','','']"></shop-card>
+    <!-- More products... -->
+  </div>
+</section>
