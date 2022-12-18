@@ -9,6 +9,9 @@ $card-baseClass: '.card';
   // Main Image
   &__main-image{
     @apply relative h-72 w-full overflow-hidden rounded-lg;
+    img{
+      @apply group-hover:scale-110 transition duration-300;
+    }
   }
 
   // Content
@@ -23,7 +26,7 @@ $card-baseClass: '.card';
 
   // Title
   &__title{
-    @apply text-sm font-medium text-gray-900;
+    @apply text-sm font-medium text-gray-900 group-hover:underline;
   }
 
   // Description
@@ -32,8 +35,8 @@ $card-baseClass: '.card';
   }
 
   // Brand
-  &__brand{
-    @apply font-bold text-gray-200 mt-2
+  &__shop{
+    @apply block font-bold text-gray-200 mt-2 hover:underline hover:text-main-200 transition;
   }
 
   // Financial Informations
@@ -64,7 +67,6 @@ $card-baseClass: '.card';
     &--in-stock{
       @apply bg-green-600;
     }
-
   }
 
   // Actions

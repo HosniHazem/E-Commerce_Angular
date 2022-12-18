@@ -1,33 +1,34 @@
-<div [class]="bem.bemConvertion(baseClass)">
-  <div [class]="bem.bemConvertion(baseClass,'main-image')">
-    <img [src]="card.image" alt="" class="h-full w-full object-cover object-center">
+<div [class]="bem.bemConvertion(baseClass,'','',['group'])">
+  <a [routerLink]="['/shop/product',product.id]" [class]="bem.bemConvertion(baseClass,'main-image')">
+    <img [src]="product.images[0]" alt="" class="h-full w-full object-cover object-center">
     <div [class]="bem.bemConvertion(baseClass,'fin-infos')">
       <div aria-hidden="true" [class]="bem.bemConvertion(baseClass,'overlay')"></div>
-      <p [class]="bem.bemConvertion(baseClass,'price')">{{card.price|currency:'TND'}}</p>
-      <p [class]="bem.bemConvertion(baseClass,'stock',card.outOfStock ? 'out-stock':'in-stock')">
-        <span>{{ card.outOfStock ? 'Out of stock' : 'In stock' }}</span>
+      <p [class]="bem.bemConvertion(baseClass,'price')">{{product.price|currency:'TND'}}</p>
+      <p [class]="bem.bemConvertion(baseClass,'stock',product.outOfStock ? 'out-stock':'in-stock')">
+        <span>{{ product.outOfStock ? 'Out of stock' : 'In stock' }}</span>
       </p>
     </div>
-  </div>
+  </a>
   <div [class]="bem.bemConvertion(baseClass,'content')">
     <p [class]="bem.bemConvertion(baseClass,'id')">
       <span class="font-bold">ID:</span>
-      {{card.id}}</p>
-    <h3 [class]="bem.bemConvertion(baseClass,'title')">{{card.title}}</h3>
-    <p [class]="bem.bemConvertion(baseClass,'description')">
-      {{card.description.toString()|slice:0:100}}
-      <span *ngIf="card.description.length>100">...</span>
-    <div class="flex items-center justify-between">
-      <p [class]="bem.bemConvertion(baseClass,'brand')">{{card.brand}}</p>
-      <c-ratings [ratings]="card.rating"></c-ratings>
+      {{product.id}}</p>
+    <a [routerLink]="['/shop/product',product.id]" [class]="bem.bemConvertion(baseClass,'title')">{{product.name}}</a>
+    <a [routerLink]="['/shop/product',product.id]" [class]="bem.bemConvertion(baseClass,'description')">
+      {{product.description.toString()|slice:0:100}}
+      <span *ngIf="product.description.length>100">...</span>
+    </a>
+    <div *ngIf="!mini" class="flex items-center justify-between">
+      <a [class]="bem.bemConvertion(baseClass,'shop')" [routerLink]="['/shop/shop',product.owner.id]">{{product.owner.name}}</a>
+      <c-ratings [ratings]="4"></c-ratings>
     </div>
   </div>
-  <div [class]="bem.bemConvertion(baseClass,'actions')">
+  <div *ngIf="!mini" [class]="bem.bemConvertion(baseClass,'actions')">
     <div [class]="bem.bemConvertion(baseClass,'add')">
       <c-button [content]="'Add to bad'" [type]="'main'" [icon]="'shopping-bag'" [iconType]="'white'"></c-button>
     </div>
     <div [class]="bem.bemConvertion(baseClass,'favorite')">
-      <c-button [type]="'basic'" [icon]="'heart'" [iconType]="'black'"></c-button>
+      <c-button [disabled]="productDemo.outOfStock" [type]="'basic'" [icon]="'heart'" [iconType]="'black'"></c-button>
     </div>
   </div>
 </div>
