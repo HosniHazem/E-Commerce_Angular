@@ -1,1 +1,43 @@
-<p>register works!</p>
+<div class="flex min-h-full ">
+  <div class="relative hidden w-0 flex-1 lg:block">
+    <img class="absolute inset-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1505904267569-f02eaeb45a4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1908&q=80" alt="">
+  </div>
+  <div class="mx-auto w-full max-w-lg flex flex-1 flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+    <div class="mt-8">
+      <div *ngIf="error">
+        <c-error [canClose]="false" [message]="'Wrong email or password'" [style]="'danger'"></c-error>
+      </div>
+      <div class="mt-6">
+
+        <h1>Register</h1>
+        <form [formGroup]="registerForm" class="space-y-6">
+          <div>
+            <c-input [input]="firstNameInputGroup" formControlName="firstName"></c-input>
+          </div>
+          <div>
+            <c-input [input]="lastNameInputGroup" formControlName="lastName"></c-input>
+          </div>
+          <div>
+            <c-input [input]="emailInputGroup" formControlName="email"></c-input>
+          </div>
+          <div>
+            <c-input [input]="phoneNumberInputGroup" formControlName="phoneNumber"></c-input>
+          </div>
+          <div>
+            <c-input [input]="ageInputGroup" formControlName="age"></c-input>
+          </div>
+          <div>
+            <c-password-input [input]="passwordInputGroup" formControlName="password"></c-password-input>
+          </div>
+          <div>
+            <c-password-input [input]="confirmPaswordInputGroup" formControlName="confirmPassword"></c-password-input>
+          </div>
+          <div>
+            <c-button (submit)="register()" type="main" [content]="'Log in'"></c-button>
+            <c-link [content]="'Do you already have an account?'" [path]="['/auth/login']"></c-link>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
