@@ -1,20 +1,27 @@
 $baseClass: '.button';
 
-button{
-    @apply flex w-full h-full justify-center items-center text-base sm:text-sm font-semibold space-x-4 py-3 px-6 w-full rounded-md hover:bg-gray-50/30 transition border-none;
+button {
+  @apply flex w-full h-full justify-center items-center text-base sm:text-sm font-semibold space-x-4 py-3 px-6 w-full rounded-md hover:bg-gray-50/30 transition;
+  @apply disabled:bg-gray-300 disabled:hover:bg-gray-300 disabled:cursor-not-allowed;
 }
-#{$baseClass}{
 
-    // Icon
-  svg{
+#{$baseClass} {
+
+  // Icon
+  svg {
     @apply text-white;
   }
-    // Type
-    // ----------------------------------
-    &__main{
-        @apply bg-main-500 hover:bg-main-600 text-white
-    }
-  &__basic{
+
+  // Type
+  // ----------------------------------
+  &__main {
+    @apply bg-main-500 hover:bg-main-600 text-white
+  }
+  &__main-outline{
+    @apply border-2 rounded-md border-main-500 text-main-500 hover:bg-main-50;
+  }
+
+  &__basic {
     @apply bg-gray-100 hover:bg-gray-300;
   }
 
