@@ -1,0 +1,24 @@
+<form [formGroup]="createShopForm" [class]="bem.bemConvertion(baseClass)">
+
+  <div [class]="bem.bemConvertion(baseClass,'header')">
+    <h3 [class]="bem.bemConvertion(baseClass,'header-title')">Create you new shop</h3>
+    <p [class]="bem.bemConvertion(baseClass,'header-description')">This information will be displayed publicly so be
+      careful what you share.</p>
+  </div>
+  <div>
+    <c-input [input]="nameInput" formControlName="name"></c-input>
+  </div>
+  <div>
+    <c-input [input]="emailInput" formControlName="email"></c-input>
+  </div>
+  <div>
+    <c-input [input]="addressInput" formControlName="address"></c-input>
+  </div>
+  <div>
+    <c-input [input]="phoneInput" formControlName="phoneNumber"></c-input>
+  </div>
+
+  <div>
+    <c-button (submit)="createShop()" type="main" [content]="'Create'"></c-button>
+  </div>
+</form>
