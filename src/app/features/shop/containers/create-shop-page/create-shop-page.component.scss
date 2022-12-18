@@ -1,0 +1,20 @@
+
+.create-shop{
+  @apply space-y-8 max-w-xl mx-auto my-24 bg-gray-50/50 shadow-sm rounded-xl p-6;
+
+  // Header
+  &__header{
+    @apply pb-4 border-b-[1px];
+  }
+
+  // Header Title
+  &__header-title{
+    @apply text-lg font-medium leading-6 text-gray-900;
+  }
+
+  // Header-description
+  &__header-description{
+    @apply mt-1 text-sm text-gray-500;
+  }
+
+}
