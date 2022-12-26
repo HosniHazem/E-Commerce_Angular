@@ -12,6 +12,8 @@ import { ProductContentComponent } from './components/product-content/product-co
 import { RelatedProductsComponent } from './components/related-products/related-products.component';
 import { CreateShopPageComponent } from './containers/create-shop-page/create-shop-page.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { ProductReviewsComponent } from './components/product-reviews/product-reviews.component';
+import { WriteReviewComponent } from './components/write-review/write-review.component';
 
 const routes : Routes=[
   {
@@ -36,6 +38,8 @@ const routes : Routes=[
     ProductContentComponent,
     RelatedProductsComponent,
     CreateShopPageComponent,
+    ProductReviewsComponent,
+    WriteReviewComponent,
   ],
   imports: [
     CommonModule,
