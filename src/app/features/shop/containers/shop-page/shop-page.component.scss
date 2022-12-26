@@ -1,0 +1,66 @@
+
+
+$shopPage-baseClass: '.shop-page';
+
+#{$shopPage-baseClass}{
+  @apply p-4 max-w-7xl mx-auto;
+  // Header
+  &__header{
+    @apply flex flex-col items-center p-4;
+  }
+
+  // Image
+  &__image{
+    @apply rounded-full h-36 w-36;
+  }
+
+  // Name
+  &__name{
+    @apply mt-4 text-lg font-semibold text-gray-800;
+  }
+
+  // Description
+  &__description{
+    @apply text-center text-gray-500 text-sm max-w-xl
+  }
+
+  // Products Number
+  &__products-number{
+    @apply bg-main-50 px-4 py-1 mt-2 rounded-md text-main-800 font-semibold;
+    span{
+      @apply text-blue-500;
+    }
+  }
+
+  // Sub Info
+  &__sub-info{
+    @apply col-span-12 lg:col-span-3 space-y-4 bg-gray-50/50 p-4 rounded-md;
+  }
+  &__email,&__address,&__phone,&__created-at{
+    @apply rounded-md p-2 bg-white;
+    label{
+      @apply text-gray-800 font-semibold;
+    }
+  }
+  // Email
+  &__email{}
+
+  // Phone
+  &__phone{}
+
+  // Address
+  &__address{}
+
+  // Body
+  &__body{
+    @apply grid grid-cols-12 gap-8 items-start;
+  }
+
+  // Products
+  &__products{
+    @apply col-span-12 lg:col-span-9;
+    &--grid{
+      @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+    }
+  }
+}

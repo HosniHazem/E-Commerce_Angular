@@ -20,6 +20,9 @@ import { RatingsComponent } from './components/02-molecules/ratings/ratings.comp
 import { ErrorComponent } from './components/02-molecules/error/error.component';
 import { DeviderComponent } from './components/01-atoms/devider/devider.component';
 import { StockIndicatorComponent } from './components/01-atoms/stock-indicator/stock-indicator.component';
+import { SearchBarComponent } from './components/02-molecules/search-bar/search-bar.component';
+import { PaginationComponent } from './components/02-molecules/pagination/pagination.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -42,12 +45,15 @@ import { StockIndicatorComponent } from './components/01-atoms/stock-indicator/s
     ErrorComponent,
     DeviderComponent,
     StockIndicatorComponent,
+    SearchBarComponent,
+    PaginationComponent,
   ],
   imports: [
     CommonModule,
     IconsModule,
     RouterLinkWithHref,
     BrowserAnimationsModule,
+    FormsModule,
   ],
   exports: [
     ButtonComponent,
@@ -65,7 +71,9 @@ import { StockIndicatorComponent } from './components/01-atoms/stock-indicator/s
     RatingsComponent,
     ErrorComponent,
     DeviderComponent,
-    StockIndicatorComponent
+    StockIndicatorComponent,
+    SearchBarComponent,
+    PaginationComponent
   ]
 })
 export class SharedModule { }

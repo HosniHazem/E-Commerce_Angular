@@ -20,9 +20,10 @@ export class CreateShopPageComponent implements OnInit {
   emailInput = new InputGroup('mail', 'email', 'Email', 'emailInput', 'emailInput', 'shop@shop.com');
   addressInput = new InputGroup('map', 'text', 'Address', 'addressInput', 'addressInput', 'Enter your address');
   phoneInput = new InputGroup('phone', 'number', 'Phone Number', 'phoneNumber', 'phoneNumber', '22333899');
-
+  descriptionInput = new InputGroup('', 'textarea', 'Description', 'descriptionInput', 'descriptionInput', 'write your shop description');
   createShopForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
+    description: new FormControl('',[Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
     address: new FormControl('', [Validators.required]),
     phoneNumber: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(8)])
@@ -35,6 +36,7 @@ export class CreateShopPageComponent implements OnInit {
     const shopModel: ShopModel ={
       name: this.createShopForm.get('name')?.value!,
       email: this.createShopForm.get('email')?.value!,
+      description: this.createShopForm.get('description')?.value!,
       address: this.createShopForm.get('address')?.value!,
       phoneNumber: this.createShopForm.get('phoneNumber')?.value!,
     }

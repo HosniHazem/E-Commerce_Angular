@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Bem} from "../../../../shared/functions/bem";
 
 @Component({
   selector: 'app-shop-page',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopPageComponent implements OnInit {
 
-  constructor() { }
+  baseClass: string = "shop-page";
+  constructor(public bem: Bem) {
+  }
 
   ngOnInit(): void {
   }

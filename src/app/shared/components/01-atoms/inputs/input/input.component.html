@@ -4,11 +4,17 @@
     <div *ngIf="this.inputGroup.icon" [class]="bem.bemConvertion(baseClass,'icon')">
       <c-icon [icon]="this.inputGroup.icon"></c-icon>
     </div>
-    <input [type]="inputGroup.type" [name]="inputGroup.name" [id]="inputGroup.id" [placeholder]="inputGroup.placeholder"
+    <input *ngIf="inputGroup.type != 'textarea'" [type]="inputGroup.type" [name]="inputGroup.name" [id]="inputGroup.id" [placeholder]="inputGroup.placeholder"
       [class]="bem.bemConvertion(
         baseClass,
         'input',
         (this.inputGroup.icon) ? 'with-icon' : '')" [placeholder]="inputGroup.placeholder"
       (input)="onChange($any($event.target).value)" #input>
+    <textarea *ngIf="inputGroup.type=='textarea'"   [name]="inputGroup.name" [id]="inputGroup.id" rows="4" [placeholder]="inputGroup.placeholder"
+              [class]="bem.bemConvertion(
+        baseClass,
+        'input',
+        (this.inputGroup.icon) ? 'with-icon' : '')"
+    ></textarea>
   </div>
 </div>
