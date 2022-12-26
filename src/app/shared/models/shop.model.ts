@@ -4,6 +4,7 @@ import {ProductModel} from "./product.model";
 export interface ShopModel{
   id?: string;
   name: string;
+  description?: string;
   email?: string;
   address?: string;
   phoneNumber?: string;
