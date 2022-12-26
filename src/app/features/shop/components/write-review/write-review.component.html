@@ -1,0 +1,12 @@
+<form [formGroup]="reviewForm" class="mx-4 lg:mx-0 bg-gray-50/50 rounded-md space-y-4 p-4 lg:p-8">
+  <div class="">
+    <p class="font-medium text-sm mb-2">Rate this product</p>
+    <c-ratings (submit)="rate($event)"></c-ratings>
+  </div>
+  <div>
+    <c-input [input]="reviewInput" formControlName="review"></c-input>
+    <div class="flex justify-end mt-2">
+      <c-button [icon]="'external-link'" [iconType]="'white'" [type]="'main'" [content]="'submit review'" (submit)="submitReview()"></c-button>
+    </div>
+  </div>
+</form>
