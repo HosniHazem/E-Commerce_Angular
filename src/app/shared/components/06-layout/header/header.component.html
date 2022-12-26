@@ -29,9 +29,9 @@
           <!-- ? Auth -->
           <div [class]="bem.bemConvertion(baseClass,'auth-menu')">
             <div [class]="bem.bemConvertion(baseClass,'auth-menu-container')">
-              <c-link [type]="'nav'" [path]="['/auth/login']" [content]="'Log in'"></c-link>
+              <c-link [type]="'nav'" [icon]="'log-in'" [path]="['/auth/login']" [content]="'Log in'"></c-link>
               <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
-              <c-link [type]="'nav'" [path]="['/auth/register']" [content]="'Register'"></c-link>
+              <c-link [type]="'link-main--filled'" [path]="['/auth/register']" [content]="'Register'"></c-link>
             </div>
 
             <c-button [type]="'main-outline'" [icon]="'briefcase'" [iconType]="'main'"  [content]="'Open my shop'"></c-button>
