@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Optional, Self } from '@angular/core';
+import {Component, Input, OnChanges, OnInit, Optional, Self} from '@angular/core';
 import { NgControl } from '@angular/forms';
 import { Bem } from 'src/app/shared/functions/bem';
 import { SelectInputGroup } from '../../../00-base/models/select.model';
@@ -10,6 +10,7 @@ import { SelectInputGroup } from '../../../00-base/models/select.model';
 })
 export class SelectComponent implements OnInit {
   @Input('select') selectInputGroup!: SelectInputGroup;
+  @Input('standalone') standalone: boolean= false;
   baseClass = 'input-group';
   constructor(
     public bem: Bem,
@@ -25,6 +26,7 @@ export class SelectComponent implements OnInit {
   value: any = '';
 
   ngOnInit() {}
+
 
   writeValue(value: any): void {
     this.value = value;

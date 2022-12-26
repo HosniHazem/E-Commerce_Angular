@@ -10,6 +10,7 @@ import {Component, Input, OnInit} from '@angular/core';
 
 export class LinkComponent implements OnInit {
   @Input('content') content:String = "Link";
+  @Input('icon') icon: string="";
   @Input('path') path: String[] = [];
   @Input('type') type: String = "";
 
