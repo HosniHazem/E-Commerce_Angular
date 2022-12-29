@@ -1,18 +1,18 @@
 <!-- Product -->
-<div [class]="bem.bemConvertion(baseClass)">
+<div [class]="bem.bemConversion(baseClass)">
   <!-- Image gallery -->
-  <div [class]="bem.bemConvertion(baseClass,'image-gallery')">
+  <div [class]="bem.bemConversion(baseClass,'image-gallery')">
     <!-- Image selector -->
-    <div [class]="bem.bemConvertion(baseClass,'image-selector')">
-      <div [class]="bem.bemConvertion(baseClass,'image-selector-layout')">
+    <div [class]="bem.bemConversion(baseClass,'image-selector')">
+      <div [class]="bem.bemConversion(baseClass,'image-selector-layout')">
         <button *ngFor="let image of productDemo.images; let i=index;" (click)="selectImage(i)"
-                [class]="bem.bemConvertion(baseClass,'sub-image','',[selectedImageIndex==i ? 'selected' : ''])">
+                [class]="bem.bemConversion(baseClass,'sub-image','',[selectedImageIndex==i ? 'selected' : ''])">
           <img [src]="image" alt="">
         </button>
       </div>
     </div>
 
-    <div [class]="bem.bemConvertion(baseClass,'main-image')">
+    <div [class]="bem.bemConversion(baseClass,'main-image')">
       <div id="tabs-2-panel-1" aria-labelledby="tabs-2-tab-1" role="tabpanel" tabindex="0">
         <img [src]="productDemo.images[selectedImageIndex]"
              alt="">
@@ -21,13 +21,13 @@
   </div>
 
   <!-- Product info -->
-  <div [class]="bem.bemConvertion(baseClass,'product-info')">
-    <h1 [class]="bem.bemConvertion(baseClass,'product-name')">
+  <div [class]="bem.bemConversion(baseClass,'product-info')">
+    <h1 [class]="bem.bemConversion(baseClass,'product-name')">
       {{productDemo.name}}
       <c-stock-indicator [outOfStock]="productDemo.outOfStock"></c-stock-indicator>
     </h1>
     <div class="mt-3">
-      <p [class]="bem.bemConvertion(baseClass,'product-price')">{{productDemo.price|currency:'TND'}}</p>
+      <p [class]="bem.bemConversion(baseClass,'product-price')">{{productDemo.price|currency:'TND'}}</p>
     </div>
 
     <!-- Reviews -->
@@ -35,17 +35,17 @@
       <c-ratings [ratings]="4"></c-ratings>
     </div>
 
-    <div [class]="bem.bemConvertion(baseClass,'product-description')">
+    <div [class]="bem.bemConversion(baseClass,'product-description')">
       <p>{{productDemo.description}}</p>
     </div>
 
-    <div [class]="bem.bemConvertion(baseClass,'product-roots')">
-        <div [class]="bem.bemConvertion(baseClass,'product-category')">
+    <div [class]="bem.bemConversion(baseClass,'product-roots')">
+        <div [class]="bem.bemConversion(baseClass,'product-category')">
           <p>{{productDemo.category.name}}</p>
           <a [routerLink]="['/shop/category',productDemo.category.id]">
             <c-icon [icon]="'share-2'"></c-icon>
           </a>        </div>
-      <div [class]="bem.bemConvertion(baseClass,'product-shop')">
+      <div [class]="bem.bemConversion(baseClass,'product-shop')">
         <p>{{productDemo.owner.name}}</p>
         <a [routerLink]="['/shop/shop',productDemo.owner.id]">
           <c-icon [icon]="'share-2'" [type]="'gray'"></c-icon>
@@ -53,11 +53,11 @@
       </div>
     </div>
     <c-devider></c-devider>
-    <div [class]="bem.bemConvertion(baseClass,'actions')">
-      <div [class]="bem.bemConvertion(baseClass,'add')">
+    <div [class]="bem.bemConversion(baseClass,'actions')">
+      <div [class]="bem.bemConversion(baseClass,'add')">
         <c-button [disabled]="productDemo.outOfStock" [content]="'Add to bad'" [type]="'main'" [icon]="'shopping-bag'" [iconType]="'white'"></c-button>
       </div>
-      <div [class]="bem.bemConvertion(baseClass,'favorite')">
+      <div [class]="bem.bemConversion(baseClass,'favorite')">
         <c-button [type]="'basic'" [icon]="'heart'" [iconType]="'black'"></c-button>
       </div>
     </div>

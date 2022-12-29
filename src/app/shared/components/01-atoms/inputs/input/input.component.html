@@ -1,17 +1,17 @@
-<div [class]="bem.bemConvertion(baseClass)">
-  <label *ngIf="inputGroup.label!=''" [for]="inputGroup.id" [class]="bem.bemConvertion(baseClass,'label')">{{inputGroup.label}}</label>
+<div [class]="bem.bemConversion(baseClass)">
+  <label *ngIf="inputGroup.label!=''" [for]="inputGroup.id" [class]="bem.bemConversion(baseClass,'label')">{{inputGroup.label}}</label>
   <div class="relative rounded-md shadow-sm">
-    <div *ngIf="this.inputGroup.icon" [class]="bem.bemConvertion(baseClass,'icon')">
+    <div *ngIf="this.inputGroup.icon" [class]="bem.bemConversion(baseClass,'icon')">
       <c-icon [icon]="this.inputGroup.icon"></c-icon>
     </div>
     <input *ngIf="inputGroup.type != 'textarea'" [type]="inputGroup.type" [name]="inputGroup.name" [id]="inputGroup.id" [placeholder]="inputGroup.placeholder"
-      [class]="bem.bemConvertion(
+      [class]="bem.bemConversion(
         baseClass,
         'input',
         (this.inputGroup.icon) ? 'with-icon' : '')" [placeholder]="inputGroup.placeholder"
       (input)="onChange($any($event.target).value)" #input>
     <textarea *ngIf="inputGroup.type=='textarea'"   [name]="inputGroup.name" [id]="inputGroup.id" rows="4" [placeholder]="inputGroup.placeholder"
-              [class]="bem.bemConvertion(
+              [class]="bem.bemConversion(
         baseClass,
         'input',
         (this.inputGroup.icon) ? 'with-icon' : '')"

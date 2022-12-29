@@ -23,6 +23,7 @@ import { StockIndicatorComponent } from './components/01-atoms/stock-indicator/s
 import { SearchBarComponent } from './components/02-molecules/search-bar/search-bar.component';
 import { PaginationComponent } from './components/02-molecules/pagination/pagination.component';
 import {FormsModule} from "@angular/forms";
+import { SearchWithKeywordComponent } from './components/02-molecules/search-with-keyword/search-with-keyword.component';
 
 
 
@@ -47,6 +48,7 @@ import {FormsModule} from "@angular/forms";
     StockIndicatorComponent,
     SearchBarComponent,
     PaginationComponent,
+    SearchWithKeywordComponent,
   ],
   imports: [
     CommonModule,
@@ -73,7 +75,8 @@ import {FormsModule} from "@angular/forms";
     DeviderComponent,
     StockIndicatorComponent,
     SearchBarComponent,
-    PaginationComponent
+    PaginationComponent,
+    SearchWithKeywordComponent
   ]
 })
 export class SharedModule { }

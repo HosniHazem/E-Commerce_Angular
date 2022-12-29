@@ -1,6 +1,6 @@
-<header [class]="bem.bemConvertion(baseClass)">
+<header [class]="bem.bemConversion(baseClass)">
 
-    <nav aria-label="Top" [class]="bem.bemConvertion(baseClass,'nav')">
+    <nav aria-label="Top" [class]="bem.bemConversion(baseClass,'nav')">
       <div class="mx-auto max-w-7xl">
 
         <!-- ? Header main -->
@@ -13,7 +13,7 @@
           </button>
 
           <!-- ? Logo -->
-          <div [class]="bem.bemConvertion(baseClass,'logo')">
+          <div [class]="bem.bemConversion(baseClass,'logo')">
             <button (click)="isOpen=!isOpen" class="flex items-center space-x-2">
               <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
               <span class="">Your Company</span>
@@ -22,13 +22,13 @@
           </div>
 
           <!-- ? Search -->
-          <div [class]="bem.bemConvertion(baseClass,'search')">
+          <div [class]="bem.bemConversion(baseClass,'search')">
               <c-input [input]="searchInput"></c-input>
           </div>
 
           <!-- ? Auth -->
-          <div [class]="bem.bemConvertion(baseClass,'auth-menu')">
-            <div [class]="bem.bemConvertion(baseClass,'auth-menu-container')">
+          <div [class]="bem.bemConversion(baseClass,'auth-menu')">
+            <div [class]="bem.bemConversion(baseClass,'auth-menu-container')">
               <c-link [type]="'nav'" [icon]="'log-in'" [path]="['/auth/login']" [content]="'Log in'"></c-link>
               <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
               <c-link [type]="'link-main--filled'" [path]="['/auth/register']" [content]="'Register'"></c-link>
@@ -36,13 +36,13 @@
 
             <c-button [type]="'main-outline'" [icon]="'briefcase'" [iconType]="'main'"  [content]="'Open my shop'"></c-button>
              <!-- ? Profile -->
-             <button [class]="bem.bemConvertion(baseClass,'profile')">
-              <span [class]="bem.bemConvertion(baseClass,'profile-picture')">
+             <button [class]="bem.bemConversion(baseClass,'profile')">
+              <span [class]="bem.bemConversion(baseClass,'profile-picture')">
                 <svg class="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               </span>
-              <span [class]="bem.bemConvertion(baseClass,'profile-name')">John Doe</span>
+              <span [class]="bem.bemConversion(baseClass,'profile-name')">John Doe</span>
             </button>
 
             <!-- ? Cart -->
@@ -57,7 +57,7 @@
 
 
             <!-- ? Flyout menus -->
-            <div *ngIf="isOpen" class="{{bem.bemConvertion(baseClass,'flyout-menu')}}">
+            <div *ngIf="isOpen" class="{{bem.bemConversion(baseClass,'flyout-menu')}}">
               <div class="flex h-full space-x-8">
                 <div class="flex">
                   <div class="absolute inset-x-0 top-full z-10 text-sm text-gray-500">

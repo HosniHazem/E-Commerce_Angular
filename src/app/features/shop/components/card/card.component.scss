@@ -3,6 +3,10 @@
 // Base Class
 $card-baseClass: '.card';
 
+a{
+  @apply block;
+}
+
 #{$card-baseClass}{
   @apply relative w-full flex flex-col;
 
