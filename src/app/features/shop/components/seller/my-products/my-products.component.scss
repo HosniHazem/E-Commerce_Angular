@@ -1,0 +1,13 @@
+
+.my-products{
+
+  // Search
+  &__search{
+    @apply sm:flex sm:items-center py-4 lg:py-8;
+  }
+
+  // Products
+  &__products{
+    @apply grid grid-cols-1 lg:grid-cols-3 gap-8;
+  }
+}

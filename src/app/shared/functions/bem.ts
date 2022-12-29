@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 
 export class Bem {
-  public bemConvertion(
+  public bemConversion(
     baseClass: String,
     modifier?: String,
     variant?: String,

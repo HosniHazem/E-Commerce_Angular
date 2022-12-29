@@ -1,7 +1,7 @@
-<div [class]="bem.bemConvertion(baseClass)">
-  <label *ngIf="!standalone" [for]="selectInputGroup.id" [class]="bem.bemConvertion(baseClass,'label')">{{selectInputGroup.label}}</label>
+<div [class]="bem.bemConversion(baseClass)">
+  <label *ngIf="!standalone" [for]="selectInputGroup.id" [class]="bem.bemConversion(baseClass,'label')">{{selectInputGroup.label}}</label>
   <select [id]="selectInputGroup.id" [name]="selectInputGroup.name"
-    [class]="bem.bemConvertion(baseClass,'input')">
+    [class]="bem.bemConversion(baseClass,'input')">
     <option value="0" hidden selected>{{selectInputGroup.label}}</option>
     <option *ngFor="let option of selectInputGroup.options" [value]="option.id">{{option.value}}</option>
   </select>

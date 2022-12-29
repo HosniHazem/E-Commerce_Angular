@@ -1,0 +1,27 @@
+<div [class]="bem.bemConversion(baseClass)">
+  <div [class]="bem.bemConversion(baseClass,'search')">
+    <div class="sm:flex-auto">
+      <h1 class="text-xl font-semibold text-gray-900">Shop Products</h1>
+    </div>
+    <div>
+      <app-search-with-keyword></app-search-with-keyword>
+    </div>
+    <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+      <c-button [content]="'Create a product'" [type]="'main'"></c-button>
+    </div>
+  </div>
+
+  <div [class]="bem.bemConversion(baseClass,'products')">
+    <shop-card></shop-card>
+    <shop-card></shop-card>
+    <shop-card></shop-card>
+    <shop-card></shop-card>
+    <shop-card></shop-card>
+    <shop-card></shop-card>
+  </div>
+
+  <div [class]="bem.bemConversion(baseClass,'pagination')">
+    <c-pagination [meta]="10"></c-pagination>
+  </div>
+
+</div>

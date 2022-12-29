@@ -1,0 +1,32 @@
+
+.sidebar {
+
+  // Logo
+  &__logo {
+    @apply flex flex-shrink-0 items-center px-4;
+    img {
+      @apply h-8 w-auto;
+    }
+  }
+
+  // Side Bar items
+  &__items{
+    @apply mt-5 flex flex-grow flex-col space-y-1 px-2 pb-4;
+  }
+
+  // Item
+  &__item{
+    @apply text-gray-900 flex items-center px-2 py-2 text-sm font-medium rounded-md transition;
+    &:hover{
+      @apply bg-gray-50;
+    }
+  }
+}
+
+
+.active{
+  @apply bg-main-50 text-main-500;
+  &:hover{
+    @apply bg-main-50 text-main-500;
+  }
+}
