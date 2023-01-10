@@ -1,8 +1,8 @@
 export interface RegisterModel{
-  firstName: String;
-  lastName: String;
+  name: String;
   email: String;
   password: String;
   phoneNumber: String;
   age: String;
+  address: String;
 }

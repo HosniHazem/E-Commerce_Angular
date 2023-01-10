@@ -23,11 +23,13 @@ import { EditProductComponent } from './components/seller/edit-product/edit-prod
 import { EditCouponComponent } from './components/seller/edit-coupon/edit-coupon.component';
 import { CreateProductComponent } from './components/seller/create-product/create-product.component';
 import { CreateCouponComponent } from './components/seller/create-coupon/create-coupon.component';
+import { AcceuilPageComponent } from './containers/acceuil-page/acceuil-page.component';
 
 const routes : Routes=[
   {
     path: 'shop',
     children: [
+      {path: '', component: AcceuilPageComponent},
       {path: 'category/:id',component:CategoryPageComponent},
       {path: 'product/:id',component:ProductPageComponent},
       {path: 'shop/:id', component:ShopPageComponent},
@@ -88,6 +90,7 @@ const routes : Routes=[
     EditCouponComponent,
     CreateProductComponent,
     CreateCouponComponent,
+    AcceuilPageComponent,
   ],
   imports: [
     CommonModule,

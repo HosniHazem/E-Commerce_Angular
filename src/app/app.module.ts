@@ -9,7 +9,8 @@ import { IconsModule } from './shared/components/00-base/icons/icons.module';
 import { SharedModule } from './shared/shared.module';
 import {AuthModule} from "./features/auth/auth.module";
 import {ShopModule} from "./features/shop/shop.module";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {TokenInterceptor} from "./core/interceptors/token.interceptor";
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -21,7 +22,13 @@ import {HttpClientModule} from "@angular/common/http";
     SharedModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

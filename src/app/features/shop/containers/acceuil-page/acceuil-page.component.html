@@ -1,0 +1,13 @@
+<div [class]="bem.bemConversion(baseClass)">
+  <div [class]="bem.bemConversion( baseClass,'header')">
+    <h1 [class]="bem.bemConversion(baseClass,'title')">Category Name</h1>
+    <div [class]="bem.bemConversion(baseClass,'filters')">
+      <app-filters></app-filters>
+    </div>
+  </div>
+  <div [class]="bem.bemConversion(baseClass,'products')">
+    <shop-products-layout>
+      <shop-card *ngFor="let product of products" [product]="product"></shop-card>
+    </shop-products-layout>
+  </div>
+</div>

@@ -3,6 +3,7 @@ import {InputGroup} from "../../../../shared/components/00-base/models/input.mod
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../service/auth.service";
 import {LoginModel} from "../../models/login.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl('',[Validators.required]),
   })
 
-  constructor(private _authService:AuthService) { }
+  constructor(private _authService:AuthService, private router$: Router) { }
 
   ngOnInit(): void {
   }
@@ -37,7 +38,8 @@ export class LoginComponent implements OnInit {
     }
     this._authService.login(loginModel).subscribe(
       (res:any) => {
-        localStorage.setItem('jwtToken',res.token);
+        localStorage.setItem('token',res.token);
+        this.router$.navigateByUrl('/shop/');
       },
       err => {
           this.error=true;

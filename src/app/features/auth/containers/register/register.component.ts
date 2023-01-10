@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
 
   // Form Inputs
   firstNameInputGroup = new InputGroup('user','text','First Name','firstName','firstName','John');
-  lastNameInputGroup = new InputGroup('user','text','Last Name','lastName','lastName','Doe');
+  addressInputGroup = new InputGroup('map','text','Address','address','address','random address wolf street');
   emailInputGroup= new InputGroup('at-sign','email','Email','loginEmail','loginEmail',"email-adress@gmail.com");
   phoneNumberInputGroup = new InputGroup('phone','number','Phone Number','phoneNumber','phoneNumber','22333899');
   ageInputGroup = new InputGroup('calendar','number','Age','age','age','25');
@@ -29,11 +29,12 @@ export class RegisterComponent implements OnInit {
 
   // Form Group
   registerForm= new FormGroup({
-    firstName: new FormControl('',[Validators.required]),
+    name: new FormControl('',[Validators.required]),
     lastName: new FormControl('',[Validators.required]),
     email: new FormControl('',[Validators.email,Validators.required]),
     phoneNumber: new FormControl('',[Validators.required,Validators.minLength(8),Validators.maxLength(8)]),
     age: new FormControl('',[Validators.required, Validators.maxLength(2),Validators.maxLength(2)]),
+    address: new FormControl('',[Validators.required]),
     password: new FormControl('',[Validators.required]),
     confirmPassword: new FormControl('',[Validators.required]),
   })
@@ -45,17 +46,18 @@ export class RegisterComponent implements OnInit {
 
   register() {
     const registerModel: RegisterModel = {
-      firstName: this.registerForm.get('firstName')?.value!,
-      lastName: this.registerForm.get('lastName')?.value!,
+      name: this.registerForm.get('name')?.value!,
       email: this.registerForm.get('email')?.value!,
       phoneNumber: this.registerForm.get('phoneNumber')?.value!,
       age: this.registerForm.get('age')?.value!,
       password: this.registerForm.get('password')?.value!,
+      address: this.registerForm.get('address')?.value!,
     }
-    console.log(this._authService.register(registerModel));
+
     this._authService.register(registerModel).subscribe(
       (res:any) => {
-        this.router$.navigateByUrl('/auth/login');
+        console.log(res);
+        //this.router$.navigateByUrl('/auth/login');
       },
       err => {
         this.error=true;

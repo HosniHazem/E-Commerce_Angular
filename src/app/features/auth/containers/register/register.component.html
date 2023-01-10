@@ -5,17 +5,14 @@
   <div class="mx-auto w-full max-w-lg flex flex-1 flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
     <div class="mt-8">
       <div *ngIf="error">
-        <c-error [canClose]="false" [message]="'Wrong email or password'" [style]="'danger'"></c-error>
+        <c-error [canClose]="false" [message]="'Wrong Data!'" [style]="'danger'"></c-error>
       </div>
       <div class="mt-6">
 
         <h1>Register</h1>
         <form [formGroup]="registerForm" class="space-y-6">
           <div>
-            <c-input [input]="firstNameInputGroup" formControlName="firstName"></c-input>
-          </div>
-          <div>
-            <c-input [input]="lastNameInputGroup" formControlName="lastName"></c-input>
+            <c-input [input]="firstNameInputGroup" formControlName="name"></c-input>
           </div>
           <div>
             <c-input [input]="emailInputGroup" formControlName="email"></c-input>
@@ -25,6 +22,9 @@
           </div>
           <div>
             <c-input [input]="ageInputGroup" formControlName="age"></c-input>
+          </div>
+          <div>
+            <c-input [input]="addressInputGroup" formControlName="address"></c-input>
           </div>
           <div>
             <c-password-input [input]="passwordInputGroup" formControlName="password"></c-password-input>
